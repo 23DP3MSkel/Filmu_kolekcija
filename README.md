@@ -10,17 +10,13 @@ Atribūti:
 
 nosaukums (String) – Filmas nosaukums.
 
-režisors (String) – Filmas režisors.
-
 žanrs (String) – Filmas žanrs (komēdija, drāma, trilleris utt.).
 
-aktieri (String[]) – Aktieri, kas piedalās filmā.
+ilgums (int) – Filmas ilgums minūtēs.
 
 izlaidumaGads (int) – Filmas izlaiduma gads.
 
 vērtējums (double) – Filmas vērtējums (piemēram, IMDb vērtējums).
-
-ilgums (int) – Filmas ilgums minūtēs.
 
 2. objekts 
 

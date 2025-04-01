@@ -10,30 +10,6 @@ private double rating;
 
 
 
-public Movies(String movieName){
-    this.movieName = movieName;
-}
-
-
-public Movies(String movieName, int releaseYear){
-    this.movieName = movieName;
-    this.releaseYear = releaseYear;
-}
-
-public Movies(String movieName, int releaseYear, String genre){
-    this.movieName = movieName;
-    this.releaseYear = releaseYear;
-    this.genre = genre;
-
-}
-
-public Movies(String movieName, int releaseYear, String genre, int length){
-    this.movieName = movieName;
-    this.releaseYear = releaseYear;
-    this.genre = genre;
-    this.length = length;  
-}
-
 public Movies(String movieName, int releaseYear, String genre, int length, double rating){
     this.movieName = movieName;
     this.releaseYear = releaseYear;
@@ -42,11 +18,42 @@ public Movies(String movieName, int releaseYear, String genre, int length, doubl
     this.rating = rating;
 }
 
+public Movies(String movieName){
+    this(movieName, 0,"",0,0);
+}
+
+public Movies(String movieName, int releaseYear){
+    this(movieName, releaseYear,"",0,0);
+}
+
+public Movies(String movieName, int releaseYear, String genre){
+    this(movieName, releaseYear,genre,0,0);
+}
+
+public Movies(String movieName, int releaseYear, String genre, int length){
+    this(movieName, releaseYear,genre,length,0);
+}
+
+
 public void addYear(int releaseYear){
     this.releaseYear = releaseYear;
 }
 
+public void addGenre(String genre){
+    this.genre = genre;
+}
 
+
+public void addLength(int length){
+    this.length = length;
+}
+
+public void addRating(double rating){
+    this.rating = rating;
+}
+
+
+@Override
 public String toString(){
     // return "Movie title: "+ this.movieName +"\nRelease year: " 
     // + this.releaseYear + "\nMovie genre: " + this.genre 
@@ -56,7 +63,7 @@ public String toString(){
     if (this.releaseYear != 0){
         print.append("\nRelease year: ").append(this.releaseYear);
     }
-    if (this.genre.isEmpty()){
+    if (this.genre != ""){
         
         print.append("\nMovie genre: ").append(this.genre);
     }
@@ -64,10 +71,10 @@ public String toString(){
         print.append("\nLength: ").append(this.length).append(" min");
     }
     if (this.rating != 0){
-        print.append("\nRating: ").append(this.rating);
+        print.append("\nRating: ").append(this.rating).append("/10");
     }
 
 
-    return "Movie title: "+ this.movieName + print;
+    return "Movie title: "+ this.movieName + print + "\n";
 }
 }
