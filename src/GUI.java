@@ -1,4 +1,4 @@
-package src;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
@@ -18,11 +18,13 @@ public class GUI {
         JButton button3 = new JButton("Search Movie");
         JFrame frame = new JFrame("Movie and Series Database");
         JPanel panel = new JPanel();
+        JLabel label = new JLabel("Welcome to the Movie and Series Database!");
         panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
         panel.setLayout(new GridLayout(0, 1));
         panel.add(button1);
         panel.add(button2);
         panel.add(button3);
+        panel.add(label);
 
 
 
