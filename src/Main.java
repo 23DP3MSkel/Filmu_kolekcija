@@ -9,26 +9,67 @@ public static void main(String[] args) {
     // Movies movie;
     Collection mediaCollection = new Collection();
 while (true){
+    System.out.println("Type in your command");
     String user = input.nextLine();
     
-    if (user.equals("addMovie")){
+    
+    if (user.equals("addMovie") || user.equals("addmovie")){
         System.out.println("Enter movie title");
         Movies movie = new Movies(input.nextLine());
         System.out.println("Add release year: ");
-        movie.addYear(Integer.valueOf(input.nextLine()));
+            String number = input.nextLine();
+            if (!number.isEmpty()){
+                movie.addYear(Integer.valueOf(number));
+            }
         System.out.println("Add genre: ");
         movie.addGenre(input.nextLine());
         System.out.println("Add length: ");
-        movie.addLength(Integer.valueOf(input.nextLine()));
+            number = input.nextLine();
+            if (!number.isEmpty()){
+                movie.addLength(Integer.valueOf(number));
+            }
+
         System.out.println("Add rating: ");
-        movie.addRating(Double.valueOf(input.nextLine()));
+            number = input.nextLine();
+            if (!number.isEmpty()){
+                movie.addRating(Double.valueOf(number));
+            }
 
         mediaCollection.addMovie(movie);
     }
 
-    if (user.equals("seeAll")){
-        System.out.println(mediaCollection.getMovies());
+
+    if (user.equals("addSeries")){
+        System.out.println("Enter series title");
+        Series series = new Series(input.nextLine());
+        System.out.println("Add release year: ");
+            String number = input.nextLine();
+            if (!number.isEmpty()){
+                series.addReleaseYear(Integer.valueOf(number));
+            }
+        System.out.println("Add genre: ");
+        series.addGenre(input.nextLine());
+        System.out.println("Add seasons: ");
+            number = input.nextLine();
+            if (!number.isEmpty()){
+                series.addSeasons(Integer.valueOf(number));
+            }
+
+        System.out.println("Add rating: ");
+            number = input.nextLine();
+            if (!number.isEmpty()){
+                series.addRating(Double.valueOf(number));
+            }
+
+        mediaCollection.addSeries(series);
     }
+
+    if (user.equals("seeAll")){
+        for (Movies movie : mediaCollection.getMovies()) {
+            System.out.println(movie);
+        }
+    }
+    
 
     if(user.equals("exit")){
         break;
@@ -36,7 +77,7 @@ while (true){
 
     if(user.equals("help")){
 
-    System.out.println("All commands:\n addMovie ; addSerie ; seeAll ; exit ");
+    System.out.println("All commands:\n addMovie ; addSeries ; seeAll ; exit ");
 }
 
     continue;
