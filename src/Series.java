@@ -1,4 +1,6 @@
-public class Series {
+import java.io.Serializable;
+
+public class Series implements Serializable {
 
     private String name;
     private int releaseYear;

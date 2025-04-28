@@ -1,6 +1,7 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Collection {
+public class Collection implements Serializable {
 
     private ArrayList<Movies> movies;
     private ArrayList<Series> series;
