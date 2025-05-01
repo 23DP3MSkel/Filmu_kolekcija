@@ -14,10 +14,12 @@ public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
 
     while (true){
+        
         if (currentUser == null){
 
             System.out.println("Type your username: ");
             String login = input.nextLine();
+            // String login = "mark";
             if(login.equals("exit")){
                 break;
             }
@@ -130,6 +132,49 @@ public static void main(String[] args) {
     }
 
 
+
+
+    // https://www.baeldung.com/java-printstream-printf
+//     The conversion-character is required and determines how the argument is formatted.
+
+// Conversion characters are only valid for certain data types. Here are some common ones:
+
+// s formats strings.
+// d formats decimal integers.
+// f formats floating-point numbers.
+// t formats date/time values.
+
+// https://www.youtube.com/watch?v=Kfc6p41-Iq8
+
+
+
+
+    if (user.equals("movie table")){
+        System.out.println();
+        System.out.printf("%-20s %-6s %-10s %-8s %-8s%n", "Title", "Year", "Genre", "Length","Rating");
+System.out.println("-----------------------------------------------------------");
+for (Movies movie : currentUser.getCollection().getMovies()) {
+    System.out.printf("%-20s %-6d %-10s %-8d %-8.1f%n",
+        movie.getTitle(), movie.getYear(), movie.getGenre(), movie.getLength(),movie.getRating());
+}
+    }
+
+
+if (user.equals("series")){
+    System.out.println();
+    System.out.printf("| %-20s | | %-6s | | %-10s | | %-8s | | %-8s |%n", "Title", "Year", "Genre", "Seasons","Rating");
+System.out.println("----------------------------------------------------------------------------");
+for (Series serie : currentUser.getCollection().getSeries()) {
+System.out.printf("| %-20s | | %-6d | | %-10s | | %-8d | | %-8.1f |%n",
+    serie.getTitle(), serie.getYear(), serie.getGenre(), serie.getSeasons(),serie.getRating());
+}
+System.out.println();
+
+
+
+    }
+
+
     if(user.equals("exit")){
         break;
     }
@@ -146,6 +191,36 @@ public static void main(String[] args) {
         delete(username);
     }
 
+    if(user.equals("remove movie")){
+        Movies delete = null;
+        int y = 1;
+        
+        System.out.println("Choose which movie to remove:");
+        for(Movies movie : currentUser.getCollection().getMovies()){
+            System.out.println(y+". "+ movie.getTitle());
+            y++;
+        }
+        int i = Integer.valueOf(input.nextLine());
+        y = 1;
+
+        for(Movies movie : currentUser.getCollection().getMovies()){
+            if (y == i){
+                delete = movie;
+            }
+            y++;
+        }
+        if(delete != null){
+            System.out.println(delete.getTitle() +" has been removed\n");
+            currentUser.getCollection().removeMovie(delete);
+            save(currentUser);
+        }else{
+            System.out.println("something went wrong... try again!");
+            
+        }
+        
+       
+    }
+
     if(user.equals("help")){
 
     System.out.println("\nAll commands:\n ~addMovie~ is to add movie to the list;\n ~addSeries~ to add TV series to list;\n ~seeList~ to access your list;\n ~username~ to see current user;\n ~logout~ to log out of current user;\n ~exit~ to end the program;\n ");
@@ -155,9 +230,10 @@ public static void main(String[] args) {
 
 
 }
+    }
 
 
-}
+
 
 
 
@@ -188,9 +264,10 @@ private static void delete(String username){
         }
     }
 
-    
-    // input.close();
 
+
+    
+    
 }
 
     

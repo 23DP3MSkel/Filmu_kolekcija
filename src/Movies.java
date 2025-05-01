@@ -52,6 +52,25 @@ public void addLength(int length){
 public void addRating(double rating){
     this.rating = rating;
 }
+public String getTitle(){
+    return this.movieName;
+}
+public int getYear(){
+    return this.releaseYear;
+}
+
+public String getGenre(){
+    return this.genre;
+}
+public int getLength(){
+    return this.length;
+}
+public double getRating(){
+    return this.rating;
+}
+
+
+
 
 
 @Override

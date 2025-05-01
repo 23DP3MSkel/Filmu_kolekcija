@@ -32,6 +32,11 @@ public class Series implements Serializable {
         this(name, releaseYear, genre, seasons, 0);
     }
 
+
+
+
+
+
     public void addReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
@@ -47,6 +52,32 @@ public class Series implements Serializable {
     public void addRating(double rating){
         this.rating = rating;
     }
+
+
+
+
+
+
+    public String getTitle(){
+        return this.name;
+    }
+    public int getYear(){
+        return this.releaseYear;
+    }
+    
+    public String getGenre(){
+        return this.genre;
+    }
+    public int getSeasons(){
+        return this.seasons;
+    }
+    public double getRating(){
+        return this.rating;
+    }
+
+
+
+
 
     @Override
     public String toString() {
