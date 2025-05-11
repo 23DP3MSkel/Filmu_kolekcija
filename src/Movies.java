@@ -36,6 +36,11 @@ public Movies(String movieName, int releaseYear, String genre, int length){
 }
 
 
+public void addTitle(String title){
+    this.movieName = title;
+}
+
+
 public void addYear(int releaseYear){
     this.releaseYear = releaseYear;
 }
@@ -52,6 +57,10 @@ public void addLength(int length){
 public void addRating(double rating){
     this.rating = rating;
 }
+
+
+
+
 public String getTitle(){
     return this.movieName;
 }
