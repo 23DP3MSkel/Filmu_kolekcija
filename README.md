@@ -1,31 +1,32 @@
 
 
-## Programma atļauj veidot jaunus lietotājus vai ieet vecajos, kuri ieejot savā profilā var pievienot dažādas filmas un seriālus nododot tai informāciju par tām. Un programma saglabā katru filmu/seriālu lietotāja failā. Tā arī atļauj rediģēt, dzēst, skatīt tabulas, utt par filmām.
+## Programma atļauj veidot jaunus lietotājus vai ieet vecajos, kuri ieejot savā profilā var pievienot dažādas filmas/seriālus(turpmāk mediju) nododot tai informāciju par tām. Un programma saglabā katru mediju lietotāja failā. Tā arī atļauj rediģēt, dzēst, skatīt tabulas, utt par medijiem. Tādā veidā sekojot tam ko ir noskatijies.
 
 
 
-### User Commands
+### Programmas funkcijas/komandas
 
 - **add movie**  
-  Add a new movie to your collection.
+  Pievieno filmu lietotāja kolekcijai. Lietotājs ievadot doto komandu iegūs ziņu/pieprasījumu lai turpmāk ievada filmas - izdošanas gadu, žanru, ilgumu(min) un reitingu. Programma atļauj atstāt laukus (piem. izdošanas gadu) tukšus, ja lietotājam pietrūkst info.
 
-- **addSeries** or **add series**  
-  Add a new series to your collection.
+- **add series**  
+   Pievieno seriālu lietotāja kolekcijai. Lietotājs ievadot doto komandu iegūs ziņu/pieprasījumu lai turpmāk ievada seriāla - izdošanas gadu, žanru, sezonu skaitu un reitingu. Programma atļauj atstāt laukus (piem. izdošanas gadu) tukšus, ja lietotājam pietrūkst info.
+
 
 - **seeList**  
-  Display all movies and series in your collection.
+  atgriež visus kolekcijā ievadītos medijus - parastā saraksta formātā iekļaujot visus lietotāja sniegtos datus.
 
 - **movie table**  
-  Print a formatted table of all movies.
+  Atgriež tabulu ar informāciju par filmām.
 
 - **sort movies**  
-  Sort movies by title, year, or rating (ascending/descending).
+  Atļauj kārtot filmas pēc dažādiem kritērijiem un atgriež tabulu pēc kritērija.
 
 - **series table**  
-  Print a formatted table of all series.
+  Atgriež tabulu ar informāciju par seriāliem.
 
 - **sort series**  
-  Sort series by title, year, or rating (ascending/descending).
+  Atļauj kārtot seriālus pēc dažādiem kritērijiem un atgriež tabulu pēc kritērija..
 
 - **calculations**  
   Show statistics about your collection (amounts, average movie length, etc).
