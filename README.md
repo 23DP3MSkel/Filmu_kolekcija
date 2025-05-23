@@ -29,39 +29,39 @@
   Atļauj kārtot seriālus pēc dažādiem kritērijiem un atgriež tabulu pēc kritērija..
 
 - **calculations**  
-  Show statistics about your collection (amounts, average movie length, etc).
+  Atgriež aprēķinus par medijiem (Filmu skaits, seriālu skaits, mediju skaits un vidējais filmas garuma skaits)
 
 - **edit movie**  
-  Edit the details of a movie in your collection.
+  Atļauj rediģēt filmu. Pēc komandas ievadīšanas ir jāizvēlas no saraksta vēlamā filma un jāseko tālākajiem pieprasījumiem.
 
 - **edit series**  
-  Edit the details of a series in your collection.
+  Atļauj rediģēt seriālu. Pēc komandas ievadīšanas ir jāizvēlas no saraksta vēlamais seriāls un jāseko tālākajiem pieprasījumiem.
 
 - **remove movie**  
-  Remove a movie from your collection.
+  Atļauj izdzēst filmu no saraksta.
 
 - **remove series**  
-  Remove a series from your collection.
+  Atļauj izdzēst seriālu no saraksta.
 
 - **search movie**  
-  Search for a movie by title.
+  Atļauj sameklēt vai ir filma pēc lietotāja dotā nosaukuma. Ja filma atrodas kolekcijā, atgriežas informācija par to filmu, ja nē - programma atgriež ka filma pēc tā nosaukuma netika atrasta.
 
 - **search series**  
-  Search for a series by title.
+   Atļauj sameklēt vai ir seriāls pēc lietotāja dotā nosaukuma. Ja seriāls atrodas kolekcijā, atgriežas informācija par to seriālu, ja nē - programma atgriež ka seriāls pēc tā nosaukuma netika atrasts.
 
 - **username**  
-  Show the current user's username.
+  Atgriež lietotāja vārdu.
 
 - **logout**  
-  Log out of the current user.
+  Iziet no šī brīža lietotāja
 
 - **delete user**  
-  Delete the current user and their data.
+  Izdzēš lietotāju un informāciju par viņu
 
 - **help**  
-  Show a list of all commands.
+  Atgriež galvenās komandas kuras ir izmantojamas programmā.
 
 - **exit**  
-  Exit the program.
+  Iziet no programmas.
 
 

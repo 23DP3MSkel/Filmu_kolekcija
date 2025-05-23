@@ -92,7 +92,7 @@ public static void main(String[] args) {
     if (user.equalsIgnoreCase("addSeries") || user.equalsIgnoreCase("Add series")){
         System.out.println("Enter series title");
         Series series = new Series(input.nextLine());
-        System.out.println("Add release year: ");
+        // System.out.println("Add release year: ");
             int year = getIntInput(input, "Add release year:");
         series.addReleaseYear(year);
 
