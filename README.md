@@ -1,4 +1,9 @@
 
+
+## Programma atļauj veidot jaunus lietotājus vai ieet vecajos, kuri ieejot savā profilā var pievienot dažādas filmas un seriālus nododot tai informāciju par tām. Un programma saglabā katru filmu/seriālu lietotāja failā. Tā arī atļauj rediģēt, dzēst, skatīt tabulas, utt par filmām.
+
+
+
 ### User Commands
 
 - **add movie**  
