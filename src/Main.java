@@ -64,24 +64,24 @@ public static void main(String[] args) {
     if (user.equalsIgnoreCase("addMovie") || user.equalsIgnoreCase("add movie")){
         System.out.println("Enter movie title");
         Movies movie = new Movies(input.nextLine());
-        System.out.println("Add release year: ");
-            String number = input.nextLine();
-            if (!number.isEmpty()){
-                movie.addYear(Integer.valueOf(number));
-            }
+        // System.out.println("Add release year: ");
+            // String number = input.nextLine();
+            // if (!number.isEmpty()){
+            //     movie.addYear(Integer.valueOf(number));
+            // }
+
+        int year = getIntInput(input, "Add release year:");
+        movie.addYear(year);
+
         System.out.println("Add genre: ");
         movie.addGenre(input.nextLine());
-        System.out.println("Add length: ");
-            number = input.nextLine();
-            if (!number.isEmpty()){
-                movie.addLength(Integer.valueOf(number));
-            }
+        
+        int length = getIntInput(input, "Add length:");
+        movie.addLength(length);
 
-        System.out.println("Add rating: ");
-            number = input.nextLine();
-            if (!number.isEmpty()){
-                movie.addRating(Double.valueOf(number));
-            }
+
+        double rating = getDoubleInput(input, "Add rating: ");
+        movie.addRating(rating);
 
         currentUser.getCollection().addMovie(movie);
         save(currentUser);
@@ -93,25 +93,19 @@ public static void main(String[] args) {
         System.out.println("Enter series title");
         Series series = new Series(input.nextLine());
         System.out.println("Add release year: ");
-            String number = input.nextLine();
-            if (!number.isEmpty()){
-                series.addReleaseYear(Integer.valueOf(number));
-            }
+            int year = getIntInput(input, "Add release year:");
+        series.addReleaseYear(year);
+
         System.out.println("Add genre: ");
         series.addGenre(input.nextLine());
-        System.out.println("Add seasons: ");
-            number = input.nextLine();
-            if (!number.isEmpty()){
-                series.addSeasons(Integer.valueOf(number));
-            }
+        
+        int seasons = getIntInput(input, "Add season amount:");
+        series.addSeasons(seasons);
 
-        System.out.println("Add rating: ");
-            number = input.nextLine();
-            if (!number.isEmpty()){
-                series.addRating(Double.valueOf(number));
-            }
 
-        // mediaCollection.addSeries(series);
+        double rating = getDoubleInput(input, "Add rating: ");
+        series.addRating(rating);
+
         currentUser.getCollection().addSeries(series);
         save(currentUser);
     }
@@ -264,20 +258,84 @@ if (user.equalsIgnoreCase("sort movies")){
             if(!editing.isEmpty()){
                 edit.addTitle(editing);
             }
-            System.out.println("The release year is '"+ edit.getYear()+"' enter new year or press enter to keep.");
-            editing = input.nextLine();
-            if(!editing.isEmpty()){
-                edit.addYear(Integer.valueOf(editing));
+            // System.out.println("The release year is '"+ edit.getYear()+"' enter new year or press enter to keep.");
+            // editing = input.nextLine();
+            int editingYear = getIntInput(input, "The release year is '"+ edit.getYear()+"' enter new year or press enter to keep.");
+            if(editingYear != 0){
+                edit.addYear(editingYear);
             }
             System.out.println("The genre is '"+ edit.getGenre()+"' enter new genre or press enter to keep.");
             editing = input.nextLine();
             if(!editing.isEmpty()){
                 edit.addGenre(editing);
             }
-            System.out.println("The length is '"+ edit.getLength()+"' enter new length or press enter to keep.");
+            // System.out.println("The length is '"+ edit.getLength()+"' enter new length or press enter to keep.");
+            // editing = input.nextLine();
+            int length = getIntInput(input, "The length is '"+ edit.getLength()+"' enter new length or press enter to keep.");
+            if(length != 0){
+                edit.addLength(length);
+            }
+            // System.out.println("The rating is '"+ edit.getRating()+"' enter new rating or press enter to keep.");
+            // editing = input.nextLine();
+            double rating = getDoubleInput(input, "The rating is '"+ edit.getRating()+"' enter new rating or press enter to keep.");
+            if(rating != 0){
+                edit.addRating(rating);
+            }
+            
+            save(currentUser);
+        }else{
+            System.out.println("something went wrong... try again!");
+            
+        }
+        
+        
+    }
+
+    if (user.equalsIgnoreCase("edit series")){
+        Series edit = null;
+        int y = 1;
+
+        
+        System.out.println("Choose which movie to edit:");
+
+        for(Series series : currentUser.getCollection().getSeries()){
+            if (series.getYear() == 0){
+                System.out.println(y+". "+ series.getTitle());
+            y++;
+            }else{
+            System.out.println(y+". "+ series.getTitle()+" "+series.getYear());
+            y++;
+            }
+        }
+        int i = Integer.valueOf(input.nextLine());
+        y = 1;
+        
+        for(Series series : currentUser.getCollection().getSeries()){
+            if (y == i){
+                edit = series;
+            }
+            y++;
+        }
+        if(edit != null){
+            System.out.println("The title is '"+ edit.getTitle()+"' enter new title or press enter to keep.");
+            String editing = input.nextLine();
+            if(!editing.isEmpty()){
+                edit.addTitle(editing);
+            }
+            System.out.println("The release year is '"+ edit.getYear()+"' enter new year or press enter to keep.");
             editing = input.nextLine();
             if(!editing.isEmpty()){
-                edit.addLength(Integer.valueOf(editing));
+                edit.addReleaseYear(Integer.valueOf(editing));
+            }
+            System.out.println("The genre is '"+ edit.getGenre()+"' enter new genre or press enter to keep.");
+            editing = input.nextLine();
+            if(!editing.isEmpty()){
+                edit.addGenre(editing);
+            }
+            System.out.println("The season count is '"+ edit.getSeasons()+"' enter new amount or press enter to keep.");
+            editing = input.nextLine();
+            if(!editing.isEmpty()){
+                edit.addSeasons(Integer.valueOf(editing));
             }
             System.out.println("The rating is '"+ edit.getRating()+"' enter new rating or press enter to keep.");
             editing = input.nextLine();
@@ -339,6 +397,35 @@ if (user.equalsIgnoreCase("sort movies")){
         if(delete != null){
             System.out.println(delete.getTitle() +" has been removed\n");
             currentUser.getCollection().removeMovie(delete);
+            save(currentUser);
+        }else{
+            System.out.println("something went wrong... try again!");
+            
+        }
+        
+        
+    }
+    if(user.equalsIgnoreCase("remove series")){
+        Series delete = null;
+        int y = 1;
+        
+        System.out.println("Choose which series to remove:");
+        for(Series series : currentUser.getCollection().getSeries()){
+            System.out.println(y+". "+ series.getTitle());
+            y++;
+        }
+        int i = Integer.valueOf(input.nextLine());
+        y = 1;
+        
+        for(Series series : currentUser.getCollection().getSeries()){
+            if (y == i){
+                delete = series;
+            }
+            y++;
+        }
+        if(delete != null){
+            System.out.println(delete.getTitle() +" has been removed\n");
+            currentUser.getCollection().removeSeries(delete);
             save(currentUser);
         }else{
             System.out.println("something went wrong... try again!");
@@ -464,6 +551,32 @@ public static void searchSeries(User user, String title){
     }
 }
 
+private static int getIntInput(Scanner input, String prompt) {
+    while (true) {
+        System.out.println(prompt);
+        String line = input.nextLine();
+        if (line.isEmpty()) return 0;
+        try {
+            return Integer.parseInt(line);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number!");
+        }
+    }
+}
+
+
+private static double getDoubleInput(Scanner input, String prompt) {
+    while (true) {
+        System.out.println(prompt);
+        String line = input.nextLine().replace(',', '.'); // Replace comma with dot
+        if (line.isEmpty()) return 0.0; // or handle as you wish
+        try {
+            return Double.parseDouble(line);
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a valid number (For xmpl = 5.1)!");
+        }
+    }
+}
 
 }
 

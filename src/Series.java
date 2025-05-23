@@ -35,7 +35,9 @@ public class Series implements Serializable {
 
 
 
-
+    public void addTitle(String title){
+        this.name = title;
+    }
 
     public void addReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;

@@ -1,92 +1,61 @@
-# Filmu_kolekcija
 
-1. obkjetks
+### User Commands
 
+- **add movie**  
+  Add a new movie to your collection.
 
-Filma (Movie)
-Šis būs galvenais objekts, kas satur visu informāciju par katru filmu.
+- **addSeries** or **add series**  
+  Add a new series to your collection.
 
-Atribūti:
+- **seeList**  
+  Display all movies and series in your collection.
 
-nosaukums (String) – Filmas nosaukums.
+- **movie table**  
+  Print a formatted table of all movies.
 
-žanrs (String) – Filmas žanrs (komēdija, drāma, trilleris utt.).
+- **sort movies**  
+  Sort movies by title, year, or rating (ascending/descending).
 
-ilgums (int) – Filmas ilgums minūtēs.
+- **series table**  
+  Print a formatted table of all series.
 
-izlaidumaGads (int) – Filmas izlaiduma gads.
+- **sort series**  
+  Sort series by title, year, or rating (ascending/descending).
 
-vērtējums (double) – Filmas vērtējums (piemēram, IMDb vērtējums).
+- **calculations**  
+  Show statistics about your collection (amounts, average movie length, etc).
 
-2. objekts 
+- **edit movie**  
+  Edit the details of a movie in your collection.
 
-Seriāls (TVShow)
-Šis objekts būs līdzīgs Filma objektam, bet ar īpašībām, kas raksturīgas seriāliem.
+- **edit series**  
+  Edit the details of a series in your collection.
 
-Atribūti:
+- **remove movie**  
+  Remove a movie from your collection.
 
-nosaukums (String) – Seriāla nosaukums.
+- **remove series**  
+  Remove a series from your collection.
 
-režisors (String) – Seriāla režisors.
+- **search movie**  
+  Search for a movie by title.
 
-žanrs (String) – Seriāla žanrs (drāma, komēdija, trilleris utt.).
+- **search series**  
+  Search for a series by title.
 
-aktieri (String[]) – Aktieri, kas piedalās seriālā.
+- **username**  
+  Show the current user's username.
 
-izlaidumaGads (int) – Seriāla izlaiduma gads.
+- **logout**  
+  Log out of the current user.
 
-sezonasSkaits (int) – Sezonu skaits seriālā.
+- **delete user**  
+  Delete the current user and their data.
 
-sērijasSkaits (int) – Kopējais sēriju skaits visās sezonās.
+- **help**  
+  Show a list of all commands.
 
-vērtējums (double) – Seriāla vērtējums (piemēram, IMDb vērtējums).
-
-apraksts (String) – Īss seriāla apraksts.
-
-
-
-
-
-
-3. objekts
-
-Filmu kolekcija (MovieCollection)
-Šis objekts glabā visu filmu kolekciju. Tas būs klase, kas darbojas kā konteineris, kurā varēs pievienot, dzēst un meklēt filmas.
-
-Atribūti:
-
-filmas (Filma[]) – Masīvs vai saraksts, kas satur visas filmas kolekcijā.
-
-Metodes:
-
-pievienotFilmu(Filma filma) – Pievienot filmu kolekcijai.
-
-dzēstFilmu(String nosaukums) – Dzēst filmu pēc nosaukuma.
-
-meklētFilmu(String nosaukums) – Meklēt filmu pēc nosaukuma.
-
-parādītFilmas() – Parādīt visas filmas kolekcijā.
-
-filtrētFilmasPēcŽanra(String žanrs) – Filtrēt filmas pēc žanra.
+- **exit**  
+  Exit the program.
 
 
-4. objekts 
-
-Lietotājs (User)
-glabātu informāciju par katru lietotāju, piemēram, viņu izvēlētās filmas  utt.
-
-Atribūti:
-
-vārds (String) – Lietotāja vārds.
-
-email (String) – Lietotāja e-pasts.
-
-izvēlētāsFilmas (Filma[]) – Saraksts ar filmām, ko lietotājs ir izvēlējies, piemēram, kā "vēlos redzēt" vai "redzētas".
-
-Metodes:
-
-pievienotIzvēlētoFilmu(Filma filma) – Pievieno filmu lietotāja izvēlētajām filmām.
-
-skaitītIzvēlētāsFilmas() – Atgriež izvēlēto filmu skaitu.
-
-parādītIzvēlētāsFilmas() – Parāda visas lietotāja izvēlētās filmas.
